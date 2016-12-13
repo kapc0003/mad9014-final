@@ -1,0 +1,305 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    -webkit-touch-callout: none;
+    -webkit-text-size-adjust: none;
+    -webkit-user-select: none;
+    background-color: lightyellow;
+    background-attachment: fixed;
+    font-family: Arial, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+
+/* Portrait layout (default) */
+
+.app {
+    background: url(../img/logo.png) no-repeat center top;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 50px;
+    width: 225px;
+    text-align: center;
+    padding: 180px 0px 0px 0px;
+    margin: -115px 0px 0px -112px;
+}
+
+
+/* Landscape layout (with min-width) */
+
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position: left center;
+        padding: 75px 0px 75px 170px;
+        margin: -90px 0px 0px -198px;
+    }
+}
+
+h1 {
+    font-family: 'Times New Roman', 'Times New Roman', Times, serif;
+    font-size: 24px;
+    font-weight: normal;
+    margin: 0px;
+    overflow: visible;
+    padding: 0px;
+    text-align: center;
+}
+
+.event {
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    color: #FFFFFF;
+    font-size: 12px;
+    margin: 0px 30px;
+    padding: 2px 0px;
+}
+
+.event.listening {
+    background-color: #333333;
+    display: block;
+}
+
+.event.received {
+    background-color: #4B946A;
+    display: none;
+}
+
+@keyframes fade {
+    from {
+        opacity: 1.0;
+    }
+    50% {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1.0;
+    }
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: 1.0;
+    }
+    50% {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1.0;
+    }
+}
+
+.blink {
+    animation: fade 3000ms infinite;
+    -webkit-animation: fade 3000ms infinite;
+}
+
+.results-list {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 1px 1px 5px #bbb, -1px -1px 6px #ddd;
+    border-radius: 5px;
+}
+
+h3 {
+    padding: 0.2rem;
+    text-align: center;
+    font-weight: 700;
+    background-color: lightcyan;
+    border: 1px solid darkcyan;
+    border-radius: 5px;
+    text-decoration: underline;
+    text-shadow: 1px 1px 3px darkcyan;
+}
+
+.title {
+    text-shadow: 2px 2px 4px goldenrod;
+    text-decoration: underline;
+}
+
+button {
+    box-sizing: border-box;
+    float: left;
+    margin: 0;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 12px 0;
+}
+
+.refresh {
+    z-index: 30;
+    background-color: transparent;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    overflow: auto;
+}
+
+th {
+    background-color: darkcyan;
+    color: white;
+    width: 25%;
+    padding: 1rem;
+    margin: 15%;
+    text-align: center;
+}
+
+td {
+    padding: 0.2rem;
+    text-align: center;
+    font-weight: 700;
+    
+}
+
+tr {
+    border-bottom: 1px solid #bbb;
+}
+
+table.resultsTable {
+    text-align: center;
+    width: 100%;
+}
+
+table.standingsTable {
+    text-align: center;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid darkcyan;
+    border-radius: 5px;
+}
+
+img {
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    margin: 0;
+      
+}
+
+
+
+/*NAVIGATION*/
+
+[data-role="nav"] {
+    position: fixed;
+    z-index: 30;
+    bottom: 0;
+    width: 100%;
+    height: 5rem;
+    background-color: #fff;
+    border: 2px solid goldenrod;
+}
+
+#nav_gameresults:hover {
+    color: darkblue;
+    text-shadow: 0 0 0.2em goldenrod;
+}
+
+#nav_standings:hover {
+    color: darkblue;
+    text-shadow: 0 0 0.2em goldenrod;
+}
+
+.tabs {
+    list-style: none;
+}
+
+.tabs li {
+    float: left;
+    width: 50%;
+}
+
+.tabs a {
+    display: block;
+    line-height: 2rem;
+    font-size: 2rem;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+
+.tabs a#nav_gameresults:first-child {
+    border-right: 2px solid goldenrod;
+}
+
+/*END NAVIGATION*/
+
+
+/* Start 2 page display */
+
+
+/*pages are not displayed*/
+
+[data-role="page"] {
+    width: 100%;
+    min-height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 10;
+    padding-bottom: 5rem;
+    padding-top: 4rem;
+}
+
+[data-role="page"].active {
+    display: block;
+    z-index: 20;
+}
+
+#teamStandings {
+    border-collapse: collapse;
+    border: 1px solid #666;
+    width: 90%;
+    margin: 2rem auto;
+}
+
+#teamStandings th,
+#teamStandings td {
+    border: 1px solid #999;
+    text-align: center;
+    padding: 0.5rem 0.5rem;
+    line-height: 2rem;
+}
